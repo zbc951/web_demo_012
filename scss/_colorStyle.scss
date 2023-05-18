@@ -1,0 +1,164 @@
+//header + footer
+$header_topBG: #12b1f3;
+$header_rwdBG: #ffffffc9;
+@mixin lang {
+    background: #107dd1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: #107dd1 transparent;
+    }
+
+    &::before {
+        left: -15px;
+        border-width: 0 0 40px 15px;
+    }
+    &::after {
+        right: -15px;
+        border-width: 40px 15px 0 0;
+    }
+}
+$lang_Color: #ffffff;
+$lang_optionColor: #000000;
+$lang_BG: #107dd1;
+@mixin headerInput {
+    background: #ffffff;
+    border: none;
+    color: #5a5a5a;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 8px;
+
+    &::placeholder {
+        color: #0773a0;
+    }
+}
+@mixin headerBtn_login {
+    background: linear-gradient(to top,#f68f09 0%,#ffc64c 100%);
+    border: solid 1px #ffdf93;
+    color: #010101;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transform: skewX(-20deg);
+
+    &:hover,&:active,&.active {
+        background: linear-gradient(to bottom,#f68f09 0%,#ffc64c 100%);
+    }
+}
+@mixin headerBtn_signup {
+    background: linear-gradient(to top,#1ed8b0 0%,#50e4d0 100%);
+    border: solid 1px #85f6e6;
+    color: #010101;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transform: skewX(-20deg);
+
+    &:hover,&:active,&.active {
+        background: linear-gradient(to bottom,#1ed8b0 0%,#50e4d0 100%);
+    }
+}
+@mixin headerBtn_list {
+    background: none;
+    color: #5a5a5a;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s all;
+    overflow: hidden;
+    padding: 0 15px;
+
+    &:hover,&:active,&.active {
+        color: #0ba2e1;
+    }
+}
+$headerBtn_list_Border: #0ba2e1;
+$footer_bottomBG: linear-gradient(to right,#11a2d3 0%,#2573dd 48%,#03407e 100%);
+@mixin footerBtn {
+    background: none;
+    border: solid 1px transparent;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transform: skewX(-20deg);
+    cursor: pointer;
+    padding: 0 30px;
+
+    &:hover,&:active,&.active {
+        background: linear-gradient(to top,#f5b120 0%,#f38b04 100%);
+        border-color: #ffffff;
+    }
+}
+$footer_Color: #ffffff;
+
+//mainArea
+$swiper_dotBG: #ffffff;
+$swiper_dotActiveBG: #12b1f3;
+$marquee_titleColor: #ffffff;
+$marquee_Color: #5d5d5d;
+$mainArea_gameBox_lightColor_1: linear-gradient(to top,transparent 0%,#ffffff80 100%);
+$mainArea_gameBox_Color: #ffffff;
+$mainArea_gameBox_textShadow_1: #34ceb2;
+$mainArea_gameBox_textShadow_2: #c93b8e;
+$mainArea_gameBox_textShadow_3: #9541c9;
+$mainArea_gameBox_textShadow_4: #43b64b;
+$mainArea_gameBox_textShadow_5: #216ac3;
+$mainArea_gameBox_textShadow_6: #dd9b28;
+
+//download
+$download_titleColor: linear-gradient(15deg,#46b0dc 0%,#1d8dbc 100%);
+$download_sub_iconBG: #46b0dc;
+$download_sub_Color: #454545;
+$download_sub_Color_2: #1870c2;
+
+//bet
+$bet_titleColor: linear-gradient(-15deg,#23cab0 0%,#37dcb7 100%);
+$bet_sub_iconBG: #53d3b0;
+@mixin betBtn {
+    background: linear-gradient(-15deg,#80eac8 0%,#53d3b0 100%);
+    border: none;
+    box-shadow: -10px 10px 20px 0 #00000049;
+    color: #151515;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: skewX(-20deg);
+    transition: 0.3s all;
+
+    &:hover,&:active,&.active {
+        box-shadow: none;
+        transform: translateY(5px) skewX(-10deg) scale(0.95);
+    }
+}
+
+//intro
+$intro_titleColor: linear-gradient(15deg,#46b0dc 0%,#1d8dbc 100%);
+$intro_smallTitleColor_1: #23cab0;
+$intro_smallTitleColor_2: #d261c4;
+$intro_smallTitleColor_3: #e4a11f;
+$intro_smallTitleColor_4: #46bb5b;
+
+
+//主色系
+$BG: #f6f6f6;
+$mainBG_1: #ffffff;
+
+$mainShadow_1: #00000049;

@@ -1,0 +1,695 @@
+.mainArea {
+    width: 100%;
+    height: 0;
+    position: relative;
+    overflow: hidden;
+    padding-top: 37.85%;
+    margin-bottom: 40px;
+
+    //marqueeBox
+    .marqueeBox {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+
+        .marqueeBody {
+            width: 1457px;
+            height: 29px;
+            position: relative;
+            transition: 0.3s all;
+
+            //icon
+            .marquee_icon {
+                width: 34px;
+                height: 35px;
+                position: absolute;
+                top: -16px;
+                left: -5px;
+                animation: iconMove 3s linear 0s infinite;
+            }
+
+            .marquee {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                z-index: 1;
+
+                //title
+                .title {
+                    color: $marquee_titleColor;
+                    font-size: 16px;
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    transition: 0.3s all;
+                    margin: 0 58px 0 22px;
+                }
+
+                .box {
+                    width: 86%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    overflow: hidden;
+
+                    p {
+                        color: $marquee_Color;
+                        font-size: 15px;
+                        font-weight: bold;
+                        white-space: nowrap;
+                        transition: 0.3s all;
+                        padding-left: 100%;
+                        animation: marquee 10s linear 0s infinite;
+                    }
+
+                    @keyframes marquee {
+                        0% {
+                            transform: translateX(0%);
+                        }
+
+                        100% {
+                            transform: translateX(-100%);
+                        }
+                    }
+                }
+            }
+
+            //top + bottom
+            .marquee_top {
+                width: 1133px;
+                height: 11px;
+                position: absolute;
+                top: -11px;
+                right: 50px;
+                transition: 0.3s all;
+                animation: marquee_top 5s linear 0s infinite;
+            }
+            .marquee_bottom {
+                width: 1163px;
+                height: 11px;
+                position: absolute;
+                bottom: -11px;
+                left: 10px;
+                transition: 0.3s all;
+                animation: marquee_bottom 5s linear 0s infinite;
+            }
+
+            @keyframes iconMove {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(-360deg);
+                }
+            }
+
+            @keyframes marquee_top {
+                0% {
+                    transform: translate(0,0);
+                }
+
+                2.5% {
+                    transform: translate(5%,-150%);
+                }
+
+                17.5% {
+                    transform: translate(4.5%,-100%);
+                }
+
+                32.5% {
+                    transform: translate(5%,-150%);
+                }
+
+                47.5% {
+                    transform: translate(4.5%,-100%);
+                }
+
+                62.5% {
+                    transform: translate(5%,-150%);
+                }
+
+                65% {
+                    transform: translate(0,0);
+                }
+
+                100% {
+                    transform: translate(0,0);
+                }
+            }
+
+            @keyframes marquee_bottom {
+                0% {
+                    transform: translate(0,0);
+                }
+
+                2.5% {
+                    transform: translate(-3%,150%);
+                }
+
+                17.5% {
+                    transform: translate(-2.5%,100%);
+                }
+
+                32.5% {
+                    transform: translate(-3%,150%);
+                }
+
+                47.5% {
+                    transform: translate(-2.5%,100%);
+                }
+
+                62.5% {
+                    transform: translate(-3%,150%);
+                }
+
+                65% {
+                    transform: translate(0,0);
+                }
+
+                100% {
+                    transform: translate(0,0);
+                }
+            }
+        }
+    }
+
+    //center
+    .center {
+        width: calc(100% - 400px);
+        height: auto;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+
+        //gameBox
+        .gameBox {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 50px;
+            position: relative;
+            margin-top: 20px;
+            z-index: 1;
+
+            li {
+                width: auto;
+                height: 0;
+                border-radius: 15px; 
+                position: relative;
+                cursor: pointer;
+                padding-top: 75%;
+
+                .gameBG {
+                    width: 100%;
+                    height: 90%;
+                    border-radius: 15px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    overflow: hidden;
+                    filter: drop-shadow(0 3px 3px #00000080);
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 25%;
+                        height: 100%;
+                        background: $mainArea_gameBox_lightColor_1;
+                        left: 20%;
+                        top: -15%;
+                        transform: skewX(-45deg);
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 75%;
+                        height: 100%;
+                        background: $mainArea_gameBox_lightColor_1;
+                        left: 60%;
+                        top: 0;
+                        transform: skewX(-45deg);
+                    }
+
+                    p {
+                        color: $mainArea_gameBox_Color;
+                        font-size: 2.5vw;
+                        font-weight: bold;
+                        letter-spacing: 5px;
+                        line-height: 2.8vw;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 5%;
+                        z-index: 1;
+                    }
+                }
+
+                .gameImg {
+                    height: 0;
+                    position: absolute;
+                    bottom: -1px;
+                    right: -1px;
+                }
+
+                &.live_1 {
+
+                    .gameImg {
+                        width: 59%;
+                        padding-top: 75%;
+                    }
+                }
+                &.live_2 {
+
+                    .gameImg {
+                        width: 59%;
+                        padding-top: 75%;
+                    }
+                }
+                &.slot_1 {
+
+                    .gameImg {
+                        width: 78%;
+                        padding-top: 72%;
+                    }
+                }
+                &.slot_2 {
+
+                    .gameImg {
+                        width: 82%;
+                        padding-top: 71%;
+                    }
+                }
+                &.board_1 {
+
+                    .gameImg {
+                        width: 69%;
+                        padding-top: 72%;
+                    }
+                }
+                &.lottery_1 {
+
+                    .gameImg {
+                        width: 66%;
+                        padding-top: 61%;
+                    }
+                }
+                &.fish_1 {
+
+                    .gameImg {
+                        width: 63%;
+                        padding-top: 71%;
+                    }
+                }
+                &.sport_1 {
+
+                    .gameImg {
+                        width: 73%;
+                        padding-top: 73%;
+                    }
+                }
+
+                .fakeBox {
+                    width: 100%;
+                    height: 90%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+
+                    p {
+                        color: $mainArea_gameBox_Color;
+                        font-size: 2.5vw;
+                        font-weight: bold;
+                        letter-spacing: 5px;
+                        line-height: 2.8vw;
+                        position: absolute;
+                        top: 54%;
+                        transform: translateY(-50%);
+                        left: 5%;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    //背景動圖
+    .bg_deco {
+        position: absolute;
+
+        &.img_1 {
+            width: 339px;
+            height: 339px;
+            top: -35px;
+            left: -35px;
+
+            i {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &:nth-of-type(1) {
+                    animation: img_1_1 12s linear 0s infinite;
+                }
+                &:nth-of-type(2) {
+                    animation: img_1_2 6s linear 0s infinite;
+                }
+                &:nth-of-type(3) {
+                    animation: img_1_3 6s linear 0s infinite;
+                }
+                &:nth-of-type(4) {
+                    animation: img_1_4 4s linear 0s infinite;
+                }
+            }
+        }
+
+        &.img_2 {
+            width: 279px;
+            height: 279px;
+            top: -105px;
+            left: 600px;
+            animation: img_2 10s linear 0s infinite;
+        }
+
+        &.img_3 {
+            width: 410px;
+            height: 410px;
+            top: 200px;
+            right: -125px;
+
+            i {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &:nth-of-type(1) {
+                    animation: img_3_1 8s linear 0s infinite;
+                }
+                &:nth-of-type(2) {
+                    animation: img_3_2 10s linear 0s infinite;
+                }
+                &:nth-of-type(3) {
+                    animation: img_3_3 15s linear 0s infinite;
+                }
+                &:nth-of-type(4) {
+                    animation: img_3_4 8s linear 0s infinite;
+                }
+            }
+        }
+
+        @keyframes img_1_1 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+        @keyframes img_1_2 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes img_1_3 {
+            0% {
+                transform: rotate(0);
+            }                
+
+            10% {
+                transform: rotate(360deg);
+            }
+
+            30% {
+                transform: rotate(390deg);
+            }
+
+            40% {
+                transform: rotate(180deg);
+            }
+
+            60% {
+                transform: rotate(150deg);
+            }
+
+            70% {
+                transform: rotate(360deg);
+            }
+
+            80% {
+                transform: rotate(390deg);
+            }
+
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+        @keyframes img_1_4 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            20% {
+                transform: rotate(-180deg);
+            }
+
+            40% {
+                transform: rotate(-240deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes img_2 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes img_3_1 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+        @keyframes img_3_2 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            20% {
+                transform: rotate(180deg);
+            }
+
+            35% {
+                transform: rotate(270deg);
+            }
+
+            55% {
+                transform: rotate(630deg);
+            }
+
+            75% {
+                transform: rotate(690deg);
+            }
+
+            85% {
+                transform: rotate(1080deg);
+            }
+
+            100% {
+                transform: rotate(1440deg);
+            }
+        }
+        @keyframes img_3_3 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes img_3_4 {
+            0% {
+                transform: rotate(0);
+            }                
+
+            10% {
+                transform: rotate(-360deg);
+            }
+
+            30% {
+                transform: rotate(-390deg);
+            }
+
+            40% {
+                transform: rotate(-90deg);
+            }
+
+            60% {
+                transform: rotate(-60deg);
+            }
+
+            70% {
+                transform: rotate(-360deg);
+            }
+
+            80% {
+                transform: rotate(-390deg);
+            }
+
+            100% {
+                transform: rotate(-1080deg);
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1600px) {
+
+        .marqueeBox {
+
+            .marqueeBody {
+                width: 1200px;
+                height: 24px;
+
+                .marquee_top {
+                    width: 940px;
+                    top: -10px;
+                }
+                .marquee_bottom {
+                    width: 940px;
+                    height: 9px;
+                    bottom: -9px;
+                }
+
+                .marquee {
+
+                    .title {
+                        font-size: 14px;
+                        margin: 0 47px 0 17px;
+                    }
+                }
+            }
+        }
+        
+        .center {
+
+            .gameBox {
+                display: none;
+            }
+    
+            .swiper-middle {
+                display: block;
+            }
+        }
+    }
+    @media only screen and (max-width: 1360px) {
+
+        .marqueeBox {
+
+            .marqueeBody {
+                width: 1000px;
+                height: 20px;
+
+                .marquee_top {
+                    width: 780px;
+                    height: 8px;
+                    top: -8px;
+                }
+                .marquee_bottom {
+                    width: 820px;
+                    height: 8px;
+                    bottom: -8px;
+                }
+
+                .marquee {
+
+                    .title {
+                        font-size: 12px;
+                        margin: 0 39px 0 13px;
+                    }
+
+                    .box {
+
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .center {
+            width: calc(100% - 200px);
+
+            .swiper-middle {
+                
+                ol {
+
+                    li {
+                        width: 297px;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+
+        .marqueeBox {
+
+            .marqueeBody {
+                width: 930px;
+
+                .marquee {
+
+                    .title {
+                        margin: 0 32px 0 11px;
+                    }
+                }
+            }
+        }
+        
+        .center {
+            width: calc(100% - 100px);
+
+            .swiper-middle {
+                margin: 0;
+
+                ol {
+                    padding-top: 30px;
+                }
+            }
+        }
+    }
+}

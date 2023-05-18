@@ -1,0 +1,176 @@
+//swiper
+.swiper {
+    width: 100%;
+    height: auto;
+    max-height: 485px;
+    margin-top: 115px;
+
+    .swiper-slide {
+        height: auto !important;
+        font-size: 0;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    //dot
+    .swiper-pagination-bullets {
+        bottom: 10%;
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: $swiper_dotBG;
+            opacity: 1;
+            margin: 0 10px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: $swiper_dotActiveBG;
+        }
+    }
+}
+
+.swiper-middle {
+    display: none;
+    width: 100%;
+    height: auto;
+    position: relative;
+    transition: 0.3s all;
+    overflow: hidden;
+    margin-top: 3%;
+    z-index: 1;
+
+    ol {
+        padding: 50px 10px 10px;
+
+        li {
+            width: 348px;
+            height: 236px;
+            border-radius: 15px; 
+            position: relative;
+            cursor: pointer;
+            transition: 0.3s all;
+
+            .gameBG {
+                width: 100%;
+                height: 100%;
+                border-radius: 15px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                overflow: hidden;
+                filter: drop-shadow(0 3px 3px #00000080);
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 25%;
+                    height: 100%;
+                    background: $mainArea_gameBox_lightColor_1;
+                    left: 20%;
+                    top: -15%;
+                    transform: skewX(-45deg);
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 75%;
+                    height: 100%;
+                    background: $mainArea_gameBox_lightColor_1;
+                    left: 60%;
+                    top: 0;
+                    transform: skewX(-45deg);
+                }
+            }
+
+            .gameImg {
+                height: 0;
+                position: absolute;
+                bottom: -1px;
+                right: -1px;
+            }
+
+            &.live_1 {
+
+                .gameImg {
+                    width: 59%;
+                    padding-top: 75%;
+                }
+            }
+            &.live_2 {
+
+                .gameImg {
+                    width: 59%;
+                    padding-top: 75%;
+                }
+            }
+            &.slot_1 {
+
+                .gameImg {
+                    width: 78%;
+                    padding-top: 72%;
+                }
+            }
+            &.slot_2 {
+
+                .gameImg {
+                    width: 82%;
+                    padding-top: 71%;
+                }
+            }
+            &.board_1 {
+
+                .gameImg {
+                    width: 69%;
+                    padding-top: 72%;
+                }
+            }
+            &.lottery_1 {
+
+                .gameImg {
+                    width: 66%;
+                    padding-top: 61%;
+                }
+            }
+            &.fish_1 {
+
+                .gameImg {
+                    width: 63%;
+                    padding-top: 71%;
+                }
+            }
+            &.sport_1 {
+
+                .gameImg {
+                    width: 73%;
+                    padding-top: 73%;
+                }
+            }
+
+            .fakeBox {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                p {
+                    color: $mainArea_gameBox_Color;
+                    font-size: 40px;
+                    font-weight: bold;
+                    letter-spacing: 5px;
+                    line-height: 45px;
+                    position: absolute;
+                    top: 54%;
+                    transform: translateY(-50%);
+                    left: 5%;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
